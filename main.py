@@ -9,15 +9,20 @@ from pathlib import Path
 
 def main():
     search = input("Enter a name of a modpack: ")
-    modpacklink = str("https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=2&searchFilter=" + search).replace(
+    modpacklink = "https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=0&searchFilter=" + search + "".replace(
         " ", "%20")
     modreq = requests.get(modpacklink, headers={
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
     jsonsearch = json.loads(modreq.text)
-    modpackname = str(jsonsearch[0]['name']).replace(" ", "")
+    for modpack in jsonsearch:
+        if search.lower() in str(modpack['name']).lower():
+            modpackdownloadlink = modpack['latestFiles'][len(modpack['latestFiles']) - 1]['downloadUrl']
+            modpackname = str(modpack['name']).replace(" ", "")
+    #modpackname = str(jsonsearch[0]['name']).replace(" ", "")
+
     confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter: ")
     if(confirm == 'yes'):
-        modpackdownloadlink = jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl']
+        #modpackdownloadlink = jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl']
         #print(jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl'])
         jsonManifest = None
         if (exists("modpack.zip")):
@@ -74,7 +79,7 @@ def main():
         # https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.4/forge-1.16.5-36.2.4-universal.jar
 
         else:
-            print("Error: unzip/manifest.json doesnt exist (Could be because of invalid modpack or cannot unzip)")
+            print("Error: unzip/manifest.json doesnt exist (Could be because of invalid args or cannot unzip)")
 
 
         manifest2 = open(r"unzip/manifest.json", "r+")
