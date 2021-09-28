@@ -14,13 +14,29 @@ def main():
     modreq = requests.get(modpacklink, headers={
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
     jsonsearch = json.loads(modreq.text)
+    modpacklist = []
+    count = 0
     for modpack in jsonsearch:
         if search.lower() in str(modpack['name']).lower():
+
             modpackdownloadlink = modpack['latestFiles'][len(modpack['latestFiles']) - 1]['downloadUrl']
             modpackname = str(modpack['name']).replace(" ", "")
-    #modpackname = str(jsonsearch[0]['name']).replace(" ", "")
 
-    confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter: ")
+            modpacklist.append(modpackname + "A:W:B[]" + modpackdownloadlink)
+
+            count = count + 1
+    #modpackname = str(jsonsearch[0]['name']).replace(" ", "")
+    if count > 0:
+      liststring = ""
+      for i in modpacklist:
+          liststring = liststring + "\n" + i.split("A:W:B[]")[0]
+      select = input("\nMultiple modpacks found write the right one: " + liststring + "\n")
+      for modpack in modpacklist:
+          if select.lower() == modpack.split("A:W:B[]")[0].lower():
+                modpackname = modpack.split("A:W:B[]")[0].replace(" ", "")
+                modpackdownloadlink = modpack.split("A:W:B[]")[1]
+
+    confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter and the download will start: ")
     if(confirm == 'yes'):
         #modpackdownloadlink = jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl']
         #print(jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl'])
