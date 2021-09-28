@@ -9,7 +9,7 @@ from pathlib import Path
 
 def main():
     search = input("Enter a name of a modpack: ")
-    modpacklink = "https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=2&searchFilter=" + search + "&sort=0&sectionid=4471".replace(
+    modpacklink = str("https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=2&searchFilter=" + search).replace(
         " ", "%20")
     modreq = requests.get(modpacklink, headers={
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
