@@ -74,7 +74,7 @@ def main():
         # https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.4/forge-1.16.5-36.2.4-universal.jar
 
         else:
-            print("Error: unzip/manifest.json doesnt exist (Could be because of invalid args or cannot unzip)")
+            print("Error: unzip/manifest.json doesnt exist (Could be because of invalid modpack or cannot unzip)")
 
 
         manifest2 = open(r"unzip/manifest.json", "r+")
