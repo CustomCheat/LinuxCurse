@@ -26,7 +26,7 @@ def main():
 
             count = count + 1
     #modpackname = str(jsonsearch[0]['name']).replace(" ", "")
-    if count > 0:
+    if count > 1:
       liststring = ""
       for i in modpacklist:
           liststring = liststring + "\n" + i.split("A:W:B[]")[0]
