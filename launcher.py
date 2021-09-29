@@ -11,7 +11,7 @@ for modpack in read:
         count = count + 1
         print("[" + str(count) + "]" + " " + modpack)
 select = input("")
-if int(select) - 1 < count:
+if int(select) - 1 < count and int(select) > 0:
     modpackname = read[int(select) - 1]
     os.system("minecraft-launcher --workDir " + str(Path().absolute()) + "/" + modpackname + "/.minecraft/")
 else:
