@@ -38,6 +38,10 @@ def main():
 
     confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter and the download will start: ")
     if(confirm == 'yes'):
+        if not exists("modpacklist.txt"):
+            fp = open('modpacklist.txt', 'w')
+        file = open('modpacklist.txt', 'r+')
+        file.write(file.read() + modpackname + "\n")
         #modpackdownloadlink = jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl']
         #print(jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl'])
         jsonManifest = None
