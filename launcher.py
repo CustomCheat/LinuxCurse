@@ -14,8 +14,10 @@ for modpack in read:
     if exists(modpack + "/") and modpack != "":
         count = count + 1
         print("[" + str(count) + "]" + " " + modpack)
+
     else:
-        print("Invalid modpack: " + modpack)
+        if modpack != "\n" and modpack != "" and modpack != " ":
+            print("Invalid modpack: " + modpack)
 if count == 0:
     print("No modpacks found")
     exit()
@@ -25,7 +27,5 @@ if int(select) - 1 < count and int(select) > 0:
     os.system("minecraft-launcher --workDir " + str(Path().absolute()) + "/" + modpackname + "/.minecraft/")
 else:
     print("Error: Invalid choice")
-
-
 
 
