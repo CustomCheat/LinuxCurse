@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from os.path import exists
-
+# this file launches already installed modpacks
 file = open('modpacklist.txt', 'r')
 read = file.read().split("\n")
 print("Select Modpack: ")
