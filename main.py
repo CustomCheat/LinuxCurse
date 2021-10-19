@@ -131,7 +131,7 @@ def main():
             print("Copying forge done!")
         else:
             print("Error: " + str(os.getenv("HOME")) + "/.minecraft/libraries/net/minecraftforge/" + " does not exist")
-
+        os.rmdir(str(os.getenv("HOME")) + "/.minecraft/versions/" + forgeversion + "-" + "forge-" + forgeid + "/")
         if (exists("modpack.zip")):
             os.remove("modpack.zip")
 
