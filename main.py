@@ -42,7 +42,7 @@ def main():
         confirm = 'no'
         print('No modpacks found!! Try using some parts of the modpack like Better Minecraft [FABRIC] - 1.17.1 use Better Minecraft if this is still happening make a issue on the github page with the modpack name')
     if modpackname == "":
-        confirm = 'no'
+        confirm = 'no' 
         print('No modpacks found!! Try using some parts of the modpack like Better Minecraft [FABRIC] - 1.17.1 use Better Minecraft if this is still happening make a issue on the github page with the modpack name')
     if(confirm == 'yes'):
         if not exists("modpacklist.txt"):
