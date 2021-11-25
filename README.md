@@ -10,6 +10,8 @@ Install any modpack from CurseForge on linux easily
 <p>pip install -r requirements.txt</p>
 <p>python3 main.py</p>
 <p>Then u just enter the name of the modpack and it will start! Keep an eye on the terminal if there is an error please report it to the Issues tab on github (of course only if the error is not something like Invalid choice only if it is a error that has to do with the code)</p>
+<p>After the downloading finishes forge installer will appear just click ok</p>
+<p>After forge is installed Minecraft launcher will start (make sure u have the minecraft-launcher package) log in and create a new profile and select forge then just hit play!</p>
 <p>If u want to use the modpack later use launcher.py</p>
 <p>Bewere that this comes with no warranty and some modpacks may not work some forge version have a specific file name and dont get coppied etc.</p>
 <p>Btw english isn't my first language so sorry for any mistakes if u found one u can make a new Issue or contact me at discord</p>
