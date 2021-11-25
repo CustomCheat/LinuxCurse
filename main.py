@@ -26,6 +26,7 @@ def main():
 
             count = count + 1
     #modpackname = str(jsonsearch[0]['name']).replace(" ", "")
+    modpackname = ""
     if count > 1:
       liststring = ""
       for i in modpacklist:
@@ -35,8 +36,11 @@ def main():
           if select.lower() == modpack.split("A:W:B[]")[0].lower():
                 modpackname = modpack.split("A:W:B[]")[0].replace(" ", "")
                 modpackdownloadlink = modpack.split("A:W:B[]")[1]
-
-    confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter and the download will start: ")
+    if count != 0:
+      confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter and the download will start: ")
+    else:
+        confirm = 'no'
+        print('No modpacks found!! Try using some parts of the modpack like Better Minecraft [FABRIC] - 1.17.1 use Better Minecraft if this is still happening make a issue on the github page with the modpack name')
     if(confirm == 'yes'):
         if not exists("modpacklist.txt"):
             fp = open('modpacklist.txt', 'w')
