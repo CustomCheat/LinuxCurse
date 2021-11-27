@@ -16,6 +16,10 @@ Install any modpack from CurseForge on linux easily
 <p>Bewere that this comes with no warranty and some modpacks may not work some forge version have a specific file name and dont get coppied etc.</p>
 <p>Btw english isn't my first language so sorry for any mistakes if u found one u can make a new Issue or contact me at discord</p>
 
+<h1>For filthy pirates</h1>
+<p>!!It is not recommended to use this with an unofficial launcher this is designed for the official launcher!! This can be used with launchers like tlauncher but only with modification or when it tries to open minecraft-launcher just exit the program go into tlauncher and select the work directory in settings as the .minecraft folder in the LinuxCurse folder (.minecraft Files may not appear u can change this in the file manager settings or use Google...) Select forge and start.</p>
+
+
 <h1>Todo:</h1>
 <p>This is a list what i would want to do with this repository(probably not gonna do these things because CurseForge said there will be support for linux in like 1-2 years)</p>
 <p>For future i want to do this in a GUI contact me if u want to help me with the project</p>
