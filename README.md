@@ -2,7 +2,7 @@
 Install any modpack from CurseForge on linux easily
 
 <h1>How to use</h1>
-
+<p>U have to install the minecraft-launcher package for unofficial launchers continue reading</p>
 <p>Open a terminal and paste these commands:</p>
 <p>cd Downloads</p>
 <p>git clone https://github.com/CustomCheat/LinuxCurse.git</p>
