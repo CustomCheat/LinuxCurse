@@ -13,7 +13,7 @@ Install any modpack from CurseForge on linux easily
 <p>After the downloading finishes forge installer will appear just click ok</p>
 <p>After forge is installed Minecraft launcher will start (make sure u have the minecraft-launcher package) log in and create a new profile and select forge then just hit play!</p>
 <p>If u want to use the modpack later use launcher.py</p>
-<p>Bewere that this comes with no guarantees and some modpacks may not work some forge version have a specific file name and dont get coppied etc.</p>
+<p>Bewere that this comes with no guarantees and some modpacks may not work some forge versions have a specific file name and dont get coppied etc.</p>
 <p>Btw english isn't my first language so sorry for any mistakes if u found one u can make a new Issue or contact me at discord</p>
 
 <h1>For filthy pirates</h1>
