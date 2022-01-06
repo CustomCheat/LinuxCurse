@@ -29,20 +29,26 @@ def main():
     modpackname = ""
     if count > 1:
       liststring = ""
+      a = 0
       for i in modpacklist:
-          liststring = liststring + "\n" + i.split("A:W:B[]")[0]
-      select = input("\nMultiple modpacks found write the right one: " + liststring + "\n")
+          a = a + 1
+          liststring = liststring + "\n" + "[" + str(a) + "]" + i.split("A:W:B[]")[0]
+      select = input("\nMultiple modpacks found write the number of the modpack: " + liststring + "\n")
+      tryInt = int(select)
+      c = 0
       for modpack in modpacklist:
-          if select.lower() == modpack.split("A:W:B[]")[0].lower():
+          c = c + 1
+          if tryInt == c:
                 modpackname = modpack.split("A:W:B[]")[0].replace(" ", "")
                 modpackdownloadlink = modpack.split("A:W:B[]")[1]
-    if count != 0:
+
+    if count != 0 and count != 1:
       confirm = input("Modpack name: " + modpackname + " is that right? type yes/no and press enter and the download will start: ")
     else:
         confirm = 'no'
         print('No modpacks found!! Try using some parts of the modpack like Better Minecraft [FABRIC] - 1.17.1 use Better Minecraft if this is still happening make a issue on the github page with the modpack name')
     if modpackname == "":
-        confirm = 'no' 
+        confirm = 'no'
         print('No modpacks found!! Try using some parts of the modpack like Better Minecraft [FABRIC] - 1.17.1 use Better Minecraft if this is still happening make a issue on the github page with the modpack name')
     if(confirm == 'yes'):
         if not exists("modpacklist.txt"):
@@ -69,7 +75,7 @@ def main():
                            # headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
 
         #tojson = json.loads(req.text)
-        print("\nTask: Downloading " + jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['fileName'])
+        print("\nTask: Downloading " + modpackdownloadlink)#jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['fileName'])
         wget.download(modpackdownloadlink, "modpack.zip")
 
         os.mkdir("unzip")
