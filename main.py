@@ -101,7 +101,7 @@ def main():
                 modreq = requests.get(modlink, headers={
                     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
                 modjson = None
-                if modreq != None and modreq.text != None:
+                if modreq != None and modreq.text != None and modreq.text != "":
                   modjson = json.loads(modreq.text)
                 if (modjson != None):
 
