@@ -100,8 +100,11 @@ def main():
 
                 modreq = requests.get(modlink, headers={
                     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
-                modjson = json.loads(modreq.text)
+                modjson = None
+                if modreq != None and modreq.text != None:
+                  modjson = json.loads(modreq.text)
                 if (modjson != None):
+
                     if (len(modjson) > 1):
                         if exists(modpackname + "/.minecraft/mods/" + modjson["fileName"]):
                             print("Info: Skipping " + modjson["fileName"] + " because file already exists")
