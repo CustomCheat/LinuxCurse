@@ -6,7 +6,7 @@ import wget
 import zipfile
 from os.path import exists
 from pathlib import Path
-
+import os
 def main():
     search = input("Enter a name of a modpack: ")
     modpacklink = "https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=0&searchFilter=" + search + "".replace(
@@ -101,8 +101,11 @@ def main():
                 modreq = requests.get(modlink, headers={
                     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0'})
                 modjson = None
-                if modreq != None and modreq.text != None and modreq.text != "":
-                  modjson = json.loads(modreq.text)
+                if modreq is not None and modreq.text is not None and modreq.text != "":
+                  try:
+                    modjson = json.loads(modreq.text)
+                  except:
+                      print("Error downloading a mod this can cause problems when loading the modpack!")
                 if (modjson != None):
 
                     if (len(modjson) > 1):
@@ -147,7 +150,7 @@ def main():
             print("Copying forge done!")
         else:
             print("Error: " + str(os.getenv("HOME")) + "/.minecraft/libraries/net/minecraftforge/" + " does not exist")
-        os.rmdir(str(os.getenv("HOME")) + "/.minecraft/versions/" + forgeversion + "-" + "forge-" + forgeid + "/")
+        os.system(str("rm -rf " + os.getenv("HOME")) + "/.minecraft/versions/" + forgeversion + "-" + "forge-" + forgeid + "/")
         if (exists("modpack.zip")):
             os.remove("modpack.zip")
 
