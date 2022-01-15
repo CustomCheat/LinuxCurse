@@ -107,7 +107,7 @@ def main():
                   try:
                     modjson = json.loads(modreq.text)
                   except:
-                      print("Error downloading a mod this can cause problems when loading the modpack!")
+                      print("\nError downloading a mod this can cause problems when loading the modpack!")
                 if (modjson != None):
 
                     if (len(modjson) > 1):
