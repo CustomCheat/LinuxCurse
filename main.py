@@ -7,6 +7,7 @@ import zipfile
 from os.path import exists
 from pathlib import Path
 import os
+import re
 def main():
     search = input("Enter a name of a modpack: ")
     modpacklink = "https://addons-ecs.forgesvc.net/api/v2/addon/search?categoryId=0&gameId=432&index=1&pageSize=0&searchFilter=" + search + "".replace(
@@ -53,6 +54,7 @@ def main():
     if(confirm == 'yes'):
         if not exists("modpacklist.txt"):
             fp = open('modpacklist.txt', 'w')
+        modpackname = re.sub(r"[^a-zA-Z0-9 ]", "", modpackname)
         file = open('modpacklist.txt', 'r+')
         file.write(file.read() + modpackname + "\n")
         #modpackdownloadlink = jsonsearch[0]['latestFiles'][len(jsonsearch[0]['latestFiles']) - 1]['downloadUrl']
