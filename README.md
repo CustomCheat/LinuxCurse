@@ -1,5 +1,5 @@
 # LinuxCurse
-Install any modpack from CurseForge on linux easily
+Install any modpack from CurseForge on linux easily.
 This is not a official way to install modpacks in any way!
 
 <h1>How to use</h1>
