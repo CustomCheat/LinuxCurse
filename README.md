@@ -23,7 +23,7 @@ Btw this is what i call a "dev" build, that means it doesn't have any fancy thin
 
 
 <h1>Todo:</h1>
-<p>This is a list what i would want to do with this repository(probably not gonna do these things because CurseForge said there will be support for linux in like 1-2 years)</p>
+<p>This is a list what i would want to do with this repository(probably not gonna do these things because CurseForge said there will be support for linux in like 1-2 years, but it isn't clear what will be with CurseForge for linux)</p>
 <p>For future i want to do this in a GUI contact me if u want to help me with the project</p>
 <p>Make the forge installer silent (could not do that because there is so much versions of the forge installer)</p>
 <p>Add a mods manager</p>
