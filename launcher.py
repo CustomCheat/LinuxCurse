@@ -19,13 +19,15 @@ for modpack in read:
         if modpack != "\n" and modpack != "" and modpack != " ":
             print("Invalid modpack: " + modpack)
 if count == 0:
-    print("No modpacks found")
+    print("No modpacks found!")
     exit()
 select = input("")
 if int(select) - 1 < count and int(select) > 0:
     modpackname = read[int(select) - 1]
-    os.system("minecraft-launcher --workDir " + str(Path().absolute()) + "/" + modpackname + "/.minecraft/")
+    launchOrDir = input("[1] Launch the modpack\n[2] Open the .minecraft directory of the modpack\n")
+    if launchOrDir == 1:
+        os.system("minecraft-launcher --workDir " + str(Path().absolute()) + "/" + modpackname + "/.minecraft/")
+    else:
+        os.system("xdg-open " + str(Path().absolute()) + "/" + modpackname + "/.minecraft/")
 else:
     print("Error: Invalid choice")
-
-
