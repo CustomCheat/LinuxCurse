@@ -19,7 +19,7 @@ for modpack in read:
         if modpack != "\n" and modpack != "" and modpack != " ":
             print("Invalid modpack: " + modpack)
 if count == 0:
-    print("No modpacks found!")
+    print("None modpacks installed install modpacks with main.py")
     exit()
 select = input("")
 if int(select) - 1 < count and int(select) > 0:
