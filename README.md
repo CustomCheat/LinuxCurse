@@ -7,6 +7,11 @@ Btw this is what i call a "dev build", that means it doesn't have any fancy thin
 <p>U have to install the minecraft-launcher package for unofficial launchers continue reading</p>
 <p>Open a terminal and paste these commands:</p>
 ```
+git status
+git add
+git commit
+```
+
 cd Downloads
 <p>git clone https://github.com/CustomCheat/LinuxCurse.git</p>
 <p>cd LinuxCurse</p>
