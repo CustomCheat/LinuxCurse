@@ -2,7 +2,7 @@
 Install any modpack from CurseForge on linux easily.
 This is not a official way to install modpacks in any way!
 Btw this is what i call a "dev build", that means it doesn't have any fancy things, but it works, well that's the main thing right?
-<h2>THIS REPOSITORY MAY NOT RECEIVE UPDATES!! FOR NEW FEATURES GO TO THIS REPOSITORY: https://github.com/CustomCheat/LinuxCurseGUI </h2>
+<h2>THIS REPOSITORY MAY NOT RECEIVE UPDATES!! FOR NEW FEATURES GO TO THIS REPOSITORY: https://github.com/North-West-Wind/CurseForge-CLI/ </h2>
 <h1>How to use</h1>
 <p>U have to install the minecraft-launcher package for unofficial launchers continue reading</p>
 <p>Open a terminal and paste these commands:</p>
